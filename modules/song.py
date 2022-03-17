@@ -9,11 +9,12 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-ABS="⚙ Developer ⚙"
+ABS="⚙ Add to Group ⚙"
 APPER="ImAroshaKovida"
-OWNER="🎧 Owner 🎧"
+OWNER=" Help"
 GITCLONE="github.com/ImAroshaKovida/The-Baymax"
-B2="https://t.me/Aro_official"
+B2="t.me/thebot_from_Aro_ediz"
+B3="t.me/thebaymax_from_bot?startgroup=true"
 BUTTON1="📃 Source Code 📃"
 
 def time_to_seconds(time):
@@ -29,21 +30,9 @@ async def start(client, message):
                     InlineKeyboardButton(BUTTON1, url=GITCLONE)
                  ],[
                     InlineKeyboardButton(OWNER, url=B2),
-                    InlineKeyboardButton(ABS, url=B2)
+                    InlineKeyboardButton(ABS, url=B3)
             ]
-          ],
-                 [
-        InlineKeyboardButton(
-            text="➕ Add Baymax to your group ➕",
-            url="t.me/thebaymax_from_bot?startgroup=true",
-        ),
-    ],
-                           [
-        InlineKeyboardButton(
-            text="❔ Help",
-            url="t.me/baymax_help",
-        ),
-    ],
+          ]
         ),
         reply_to_message_id=message.message_id
     )
