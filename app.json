@@ -21,14 +21,7 @@
             "description": "Your username without @.",
             "value": "Aro_Ediz"
         },
-        "START_MSG": {
-            "description": "Start Message of BoT",
-            "value": "<b>Hello there, I'm Baymax\nI'm a Simple Yet Powerful Mp3 Downloader Bot.Made by [Arosha](t.me/Aro_Ediz)  Hit the help button to visit our support group. ,</b>\n\nJust send me Any Songs name with /song command"
-        },
-        "START_IMG": {
-            "description": "Start Message's Photo.",
-            "value": "https://telegra.ph/file/ffb3e5a67a671c0ff63ee.jpg"
-        },
+     
         "BOT_TOKEN": {
             "description": "ID of the message to edit.",
             "value": ""
