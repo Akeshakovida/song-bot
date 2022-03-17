@@ -9,13 +9,15 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-ABS="⚙ Add to Group ⚙"
+ABS=" ✔ Add to Group "
 APPER="ImAroshaKovida"
 OWNER=" Help"
 GITCLONE="github.com/ImAroshaKovida/The-Baymax"
 B2="t.me/thebot_from_Aro_ediz"
 B3="t.me/thebaymax_from_bot?startgroup=true"
-BUTTON1="📃 Source Code 📃"
+B4="t.me/Aro_Ediz"
+BUTTON1="📃 Source Code "
+He="⚙ Creater "
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -31,7 +33,9 @@ async def start(client, message):
                  ],[
                     InlineKeyboardButton(OWNER, url=B2),
                     InlineKeyboardButton(ABS, url=B3)
-            ]
+            ],[
+                    InlineKeyboardButton(He, url=B4)
+                 ]
           ]
         ),
         reply_to_message_id=message.message_id
@@ -68,7 +72,7 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[@mwkBoTs]" 
+            performer = f"[From Aro_Ediz]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -89,7 +93,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'▣ <b>Title       ==></b> <a href="{link}">{title}</a>\n▣ <b>Duration    ==></b> <code>{duration}</code>\n▣ <b>Uploaded By ==></b> <a href="https://t.me/thebot_from_Aro_ediz">The Baymax</a>'
+        rep = f'▣ <b>Title       --></b> <a href="{link}">{title}</a>\n▣ <b>Duration    --></b> <code>{duration}</code>\n▣ <b>Uploaded By --></b> <a href="https://t.me/thebot_from_Aro_ediz">The Baymax( Aro_Ediz )</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
