@@ -9,12 +9,12 @@ import time
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-ABS="Developer"
-APPER="shamilhabeeb"
-OWNER="Owner"
-GITCLONE="github.com/shamilhabeebnelli/song-bot"
-B2="telegram.dog/shamilhabeeb"
-BUTTON1="📜 Source Code 📜"
+ABS="⚙ Developer ⚙"
+APPER="ImAroshaKovida"
+OWNER="🎧 Owner 🎧"
+GITCLONE="github.com/ImAroshaKovida/The-Baymax"
+B2="https://t.me/Aro_official"
+BUTTON1="📃 Source Code 📃"
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -28,10 +28,22 @@ async def start(client, message):
                 [
                     InlineKeyboardButton(BUTTON1, url=GITCLONE)
                  ],[
-                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
+                    InlineKeyboardButton(OWNER, url=B2),
                     InlineKeyboardButton(ABS, url=B2)
             ]
-          ]
+          ],
+                 [
+        InlineKeyboardButton(
+            text="➕ Add Baymax to your group ➕",
+            url="t.me/thebaymax_from_bot?startgroup=true",
+        ),
+    ],
+                           [
+        InlineKeyboardButton(
+            text="❔ Help",
+            url="t.me/baymax_help",
+        ),
+    ],
         ),
         reply_to_message_id=message.message_id
     )
@@ -43,7 +55,7 @@ def a(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('`Searching... Please Wait...`')
+    m = message.reply('`Baymax Searching...`')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -74,7 +86,7 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**👎 Nothing found Retry with another !**')
+            m.edit('**😐 Nothing found Retry with another !**')
             return
     except Exception as e:
         m.edit(
@@ -82,13 +94,13 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("`Bruh... Uploading... Please Wait...`")
+    m.edit("`Baymax Uploading...`")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/mwklinks">MwK Song Bot</a>'
+        rep = f'▣ <b>Title       ==></b> <a href="{link}">{title}</a>\n▣ <b>Duration    ==></b> <code>{duration}</code>\n▣ <b>Uploaded By ==></b> <a href="https://t.me/thebot_from_Aro_ediz">The Baymax</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -96,7 +108,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**An internal Error Occured, Report This @redbullfed!!**')
+        m.edit('**An internal Error Occured!!**')
         print(e)
     try:
         os.remove(audio_file)
